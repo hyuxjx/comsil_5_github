@@ -1,0 +1,13 @@
+TARGET = animal.exe
+OBJS = main.o dog.o blackcow.o turtle.o stringM.o output.o
+
+$(TARGET): $(OBJS)
+	gcc -o $(TARGET) $(OBJS)
+
+%.o: %.c
+	gcc -c $< -o $@
+
+clean:
+	rm -f *.o $(TARGET)
+
+.PHONY: clean
